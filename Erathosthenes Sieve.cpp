@@ -14,10 +14,13 @@ int main()
 {
 	generatePrimes();
 	int a = 1;
+	pair<int, int> ind;
+	cout << "0 = prime, 1 = not prime\n";
 	while (a)
 	{
 		cin >> a;
-		cout << isPrime[a] << endl;
+		ind = findIndex(a);
+		cout << ((isPrime[ind.first] & masks[ind.second]) != 0) << endl;
 	}
 	return 0;
 }
